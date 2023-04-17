@@ -35,7 +35,7 @@ public class Edificio {
 	
 	private String city;
 	
-	@OneToMany(mappedBy = "building", cascade = {CascadeType.MERGE, CascadeType.REFRESH}, orphanRemoval = true, fetch = FetchType.EAGER)
-	private final List<Postazione> WorkstationsOnSite = new ArrayList<Postazione>();
+	@OneToMany(mappedBy = "edificio", cascade = {CascadeType.MERGE, CascadeType.REFRESH}, orphanRemoval = true, fetch = FetchType.EAGER)
+	private final List<Postazione> postazioni = new ArrayList<Postazione>();
 	
 }

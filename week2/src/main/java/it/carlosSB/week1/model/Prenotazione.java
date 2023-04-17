@@ -29,18 +29,18 @@ public class Prenotazione {
 	private Long id;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "user_id")
-	private User owner;
+	@JoinColumn(name = "utente_id")
+	private User utente_prenotato;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "w_stat_id")
-	private Postazione location;
+	@JoinColumn(name = "postazioneID")
+	private Postazione posto;
 
 	private LocalDate date;
 
 	@Override
 	public String toString() {
-		return "Reservation [id=" + id + ", owner=" + owner.getUsername() +"("+owner.getID()+")" + ", location=" + location.getId() + ", date=" + date + "]";
+		return "Reservation [id=" + id + ", owner=" + utente_prenotato.getUsername() +"("+utente_prenotato.getID()+")" + ", location=" + posto.getId() + ", date=" + date + "]";
 	}
 	
 	

@@ -35,7 +35,7 @@ public class Postazione {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	private String description;
+	private String descrizione;
 	
 	@Enumerated(EnumType.STRING)
 	private Tipo tipoPostazione;
@@ -43,19 +43,19 @@ public class Postazione {
 	@Enumerated(EnumType.STRING)
 	private Stato statusPostazione;
 	
-	private Integer max_sit;
+	private Integer numero_massimo;
 	
 	@ManyToOne(cascade = {CascadeType.MERGE, CascadeType.REFRESH})
-	@JoinColumn(name = "building_id")
+	@JoinColumn(name = "edificio_id")
 	private Edificio edificio;
 	
-	@OneToMany(mappedBy = "location", cascade = {CascadeType.MERGE, CascadeType.REFRESH}, orphanRemoval = true)
+	@OneToMany(mappedBy = "posto", cascade = {CascadeType.MERGE, CascadeType.REFRESH}, orphanRemoval = true)
 	private final List<Prenotazione> reservations = new ArrayList<Prenotazione>();
 
 	@Override
 	public String toString() {
-		return "Workstation [id=" + id + ", description=" + description + ", type=" + tipoPostazione + ", status=" + statusPostazione
-				+ ", max_sit=" + max_sit + ", building=" + edificio.getId() + "]";
+		return "Workstation [id=" + id + ", description=" + descrizione + ", type=" + tipoPostazione + ", status=" + statusPostazione
+				+ ", max_sit=" + numero_massimo + ", building=" + edificio.getId() + "]";
 	}
 	
 }

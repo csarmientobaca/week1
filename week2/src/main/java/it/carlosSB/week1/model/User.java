@@ -2,7 +2,6 @@ package it.carlosSB.week1.model;
 import java.util.ArrayList;
 import java.util.List;
 
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -13,14 +12,12 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.ToString;
 
 @Entity
-@Table
+@Table(name = "user")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
 @Builder
 public class User {
 	
@@ -31,6 +28,13 @@ public class User {
 	private String name;
 	private String email;
 	private String username;
-	@OneToMany(mappedBy = "reservation_owner", cascade = CascadeType.REFRESH)
-	private final List<Prenotazione> reservations = new ArrayList<Prenotazione>();
+	@OneToMany(mappedBy = "utente_prenotato")
+	private final List<Prenotazione> prenotazioni = new ArrayList<Prenotazione>();
+
+	@Override
+	public String toString() {
+		return "User [id=" + ID + ", name=" + name + ", lastname=" + lastname + ", email=" + email + ", username="
+				+ username  + "]";
+	}
+
 }
