@@ -12,9 +12,9 @@ import org.springframework.data.repository.CrudRepository;
 @Repository
 public interface JpaEdificioRepo extends CrudRepository<Edificio, Long>{
 
-		public Edificio findByName(String name);
-		public Edificio findByAddress(String address);
-		public List<Edificio> findByCity(String city);
+		public Edificio cercaName(String name);
+		public Edificio cercaAddress(String address);
+		public List<Edificio> cercaCity(String city);
 		
 		@Query(value = "SELECT COUNT(e) FROM Building b")
 		public Integer quantiEdifici();

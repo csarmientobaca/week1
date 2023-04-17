@@ -14,9 +14,9 @@ import it.carlosSB.week1.model.Postazione;
 public interface JpaPostazioneRepo extends CrudRepository<Postazione, Long> {
 	
 	// finders
-	public List<Postazione> findByStatus(Stato status);
+	public List<Postazione> cercaStato(Stato status);
 	
-	public List<Postazione> findByType(Tipo type);
+	public List<Postazione> cercaTipo(Tipo type);
 	
 	@Query(value = "SELECT w FROM Workstation w ORDER BY random() LIMIT 1")
 	public Postazione randomPostazione();

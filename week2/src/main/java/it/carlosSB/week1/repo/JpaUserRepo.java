@@ -19,6 +19,6 @@ public interface JpaUserRepo extends CrudRepository<User, Long> {
 		@Query(value = "SELECT COUNT(u) FROM User u")
 		public Integer quantiUsers();	
 		@Query(value = "SELECT u FROM User u ORDER BY random() LIMIT 1")
-		public User RandomUser();
+		public User randomUser();
 			
 }

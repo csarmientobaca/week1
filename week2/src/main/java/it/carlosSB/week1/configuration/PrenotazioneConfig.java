@@ -28,7 +28,7 @@ public class PrenotazioneConfig {
 		Prenotazione res = Prenotazione.builder()
 				.id(null)
 				.utente_prenotato(null)
-				.location(null)
+				.posto(null)
 				.date(LocalDate.of(2025, 12, fake.number().numberBetween(1, 28)))
 				.build();
 		return res;
