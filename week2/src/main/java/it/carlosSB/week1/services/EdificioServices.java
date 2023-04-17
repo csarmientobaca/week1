@@ -36,11 +36,11 @@ public class EdificioServices {
 		repoEdificio.save(b);
 		log.info("edificio aggiornato");
 	}
-	public void removeEdificio(Edificio b) {
+	public void removeEdificioConNome(Edificio b) {
 		repoEdificio.delete(b);
 		log.info("edificio salvato");
 	}
-	public void removeEdificio(Long id) {
+	public void removeEdificioConId(Long id) {
 		repoEdificio.deleteById(id);
 		log.info("edificio salvato usando id");
 	}

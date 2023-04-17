@@ -43,12 +43,12 @@ public class PostazioneServices {
 		log.info("postazione salvata");
 	}
 		
-	public void updateWorkstation(Postazione w) {
+	public void updatePostazione(Postazione w) {
 		repoPostazione.save(w);
 		log.info("postazione aggioranata");
 	}
 		
-	public void removeWorkstation(Postazione w) {
+	public void cancellaPostazioneConNome(Postazione w) {
 		repoPostazione.delete(w);
 		log.info("postazione cancellata");
 	}
@@ -58,7 +58,7 @@ public class PostazioneServices {
 		return repoPostazione.findById(id).get();
 	}
 	
-	public void removeWorkstation(Long id) {
+	public void cancellaPostazioneId(Long id) {
 		repoPostazione.deleteById(id);
 		log.info("postazione cancellata con id");
 	}
