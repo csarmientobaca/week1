@@ -13,13 +13,13 @@ import it.carlosSB.week1.model.Edificio;
 @Configuration
 public class EdificioConfig {
 
-	@Bean("customEdificio")
+	@Bean
 	@Scope("prototype")
-	public Edificio customBuilding() {
+	public Edificio customEdificio() {
 		return new Edificio();
 	}
 	
-	@Bean("fakeEdificio")
+	@Bean
 	@Scope("prototype")
 	public Edificio fakeEdificio() {
 		Faker fake = Faker.instance(new Locale("it-IT"));
@@ -32,7 +32,7 @@ public class EdificioConfig {
 		return b;
 	}
 	
-	@Bean("paramsEdificio")
+	@Bean
 	@Scope("prototype")
 	public Edificio paramsEdificio(String nome, String indirizzo, String cita) {
 		Edificio b = new Edificio(null, nome, indirizzo, cita);

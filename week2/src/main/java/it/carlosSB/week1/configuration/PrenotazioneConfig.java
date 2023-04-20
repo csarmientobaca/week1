@@ -15,13 +15,13 @@ import it.carlosSB.week1.model.User;
 
 @Configuration
 public class PrenotazioneConfig {
-	@Bean("customPrenotazione")
+	@Bean
 	@Scope("prototype")
 	public Prenotazione customPrenotazione() {
 		return new Prenotazione();
 	}
 	
-	@Bean("fakePrenotazione")
+	@Bean
 	@Scope("prototype")
 	public Prenotazione fakePrenotazione() {
 		Faker fake = Faker.instance(new Locale("it-IT"));
@@ -34,7 +34,7 @@ public class PrenotazioneConfig {
 		return res;
 	}
 	
-	@Bean("paramsPrenotazione")
+	@Bean
 	@Scope("prototype")
 	public Prenotazione paramsPrenotazione(User utente, Postazione postazione, LocalDate data) {
 		return new Prenotazione(null, utente, postazione, data);

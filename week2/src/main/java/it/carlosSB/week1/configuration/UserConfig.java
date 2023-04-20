@@ -13,13 +13,13 @@ import it.carlosSB.week1.model.User;
 @Configuration
 public class UserConfig {
 
-	@Bean("customUser")
+	@Bean
 	@Scope("prototype")
 	public User customUser() {
 		return new User();
 	}
 	
-	@Bean("fakeUser")
+	@Bean
 	@Scope("prototype")
 	public User fakeUser() {
 		Faker fake = Faker.instance(new Locale("it-IT"));
@@ -31,7 +31,7 @@ public class UserConfig {
 		return u;
 	}
 
-	@Bean("paramsUser")
+	@Bean
 	@Scope("prototype")
 	public User paramsUser(String name, String lastname) {
 		String email =  name + "." + lastname + "@example.com";

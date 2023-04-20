@@ -16,15 +16,15 @@ import it.carlosSB.week1.model.Postazione;
 @Configuration
 public class PostazioneConfig {
 
-	@Bean("customPostazione")
+	@Bean
 	@Scope("prototype")
-	public Postazione customWorkstation() {
+	public Postazione cusPostazione() {
 		return new Postazione();
 	}
 	
-	@Bean("fakePostazione") 
+	@Bean
 	@Scope("prototype") 
-	public Postazione fakeWorkstation() {
+	public Postazione fakePostazione() {
 		Faker fake = Faker.instance(new Locale("it-IT"));
 		Integer random = fake.number().numberBetween(10, 200);
 		Tipo tipo = null;
@@ -48,7 +48,7 @@ public class PostazioneConfig {
 		return post;
 	}
 	
-	@Bean("paramsPostazione")
+	@Bean
 	@Scope("prototype")
 	public Postazione paramsWorkstation(String descrizione, Tipo tipo, Stato stato, int numero_massimo, Edificio edificio) {
 		Postazione post = new Postazione(null, descrizione, tipo, stato, numero_massimo, edificio);
